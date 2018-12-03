@@ -17,18 +17,18 @@ const Portfolio = ({ match }) => (
     <h1>PORTFOLIO</h1>
     <ul>
       <li>
-        <Link to={`${match.url}/rendering`}>
-          Rendering with React
+        <Link to={`${match.url}/painting`}>
+          Painting
         </Link>
       </li>
       <li>
-        <Link to={`${match.url}/components`}>
-          Components
+        <Link to={`${match.url}/drawing`}>
+          Drawing
         </Link>
       </li>
       <li>
-        <Link to={`${match.url}/props-v-state`}>
-          Props v. State
+        <Link to={`${match.url}/digitalart`}>
+          Digital Art
         </Link>
       </li>
     </ul>
