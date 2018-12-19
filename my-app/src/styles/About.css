@@ -1,0 +1,21 @@
+#container {
+  display: flex;
+  flex: 1;
+}
+
+#content {
+  display: flex;
+  flex: 3;
+}
+
+#content p {
+  flex: 1;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 20px;
+  text-justify: inter-word;
+}
+
+#content img {
+  margin: 20px;
+}
