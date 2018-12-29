@@ -12,10 +12,23 @@ import About from './About'
 
 class Home extends Component {
   prevRoute = "homeLink";
+  loaded = false;
+  currRoute = "";
 
   componentDidMount() {
-    document.getElementById(this.prevRoute).style.borderBottomWidth = "3px";
+    console.log("component did mount");
+
+    // document.getElementById(this.prevRoute).style.borderBottomWidth = "3px";
     //based on current url, transform screen to show content, i can scroll down when url is /about but it looks like home screen (basically adjust flex and tab indicator)
+    
+    var header = document.getElementById("header");
+    var appContent = document.getElementById("appContent");
+    console.log(header);
+    console.log(appContent);
+    console.log(this.props);
+    console.log(this.currRoute);
+
+    this.navigate(this.currRoute.substr(1) + 'Link');
   }
 
   navigate(path) {
@@ -48,12 +61,18 @@ class Home extends Component {
     this.prevRoute = path;
   }
 
+  //try having loading spinner, after "header" is rendered, call navigate
+
   render() {
-    var header = document.getElementById("header");
-    var appContent = document.getElementById("appContent");
-    console.log(header);
-    console.log(appContent);
-    
+    console.log("start render");
+    console.log(this.props);
+    // if (this.loaded) { 
+    //   var header = document.getElementById("header");
+    //   var appContent = document.getElementById("appContent");
+    //   console.log(header);
+    //   console.log(appContent);
+    //   console.log(this.props);
+    // }
     return (
       <Router>
         <div id="appContainer">
@@ -65,6 +84,7 @@ class Home extends Component {
 
           <Route render={(props) => {
             console.log(props.location);
+            this.currRoute = props.location.pathname;
             // navigate(props.location.pathname.substr(1))
             // this.navigate(props.location.pathname.substr(1)+'Link');
             return (
